@@ -45,5 +45,10 @@ async def yazıtura(ctx):
 async def emoji(ctx):
     await ctx.send(randomemoji())
 
+@bot.command()
+async def spam(ctx, times: int, content='repeating...'):
+    """$spam x (mesaj içeriği) yazdığınızda mesajın x kere tekrarlanmasını sağlar"""
+    for i in range(times):
+        await ctx.send(content)
 
 bot.run(settings["TOKEN"])
