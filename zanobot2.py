@@ -49,6 +49,7 @@ async def emoji(ctx):
 async def spam(ctx, times: int, content='repeating...'):
     """$spam x (mesaj içeriği) yazdığınızda mesajın x kere tekrarlanmasını sağlar"""
     for i in range(times):
-        await ctx.send(content)
-
+        await ctx.send(content + " " + str(i + 1))
+    await ctx.send(content + (" ") + "spamlaması bitti!")
+    
 bot.run(settings["TOKEN"])
